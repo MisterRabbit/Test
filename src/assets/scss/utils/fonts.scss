@@ -1,0 +1,16 @@
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: quote($font-name);
+		src:
+			url(#{$path}.eot?#iefix) format("embedded-opentype"),
+			url(#{$path}.woff) format("woff"),
+			url(#{$path}.ttf) format("truetype");
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+@include font-face('HelveticaNeue-Light', '../fonts/HelveticaNeueCyr-Light', 300, 'normal');
+@include font-face('HelveticaNeue', '../fonts/HelveticaNeueCyr', 400, 'regular');
+@include font-face('HelveticaNeue-Medium', '../fonts/HelveticaNeueCyr-Medium', 500, 'normal');
+// @include font-face('HelveticaNeue-Bold', '../fonts/HelveticaNeueCyr-Bold', 700, 'bold');
+@include font-face('Asterisks', '../fonts/Asterisks', 300, 'light');

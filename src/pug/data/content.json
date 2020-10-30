@@ -1,0 +1,12 @@
+{
+    "example": [
+        {
+            "url": "index.html",
+            "name": "Главная"
+        },
+        {
+            "url": "contacts.html",
+            "name": "Контакты"
+        }
+    ]
+}

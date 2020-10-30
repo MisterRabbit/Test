@@ -1,0 +1,142 @@
+.form {
+	max-width: 370px;
+	width: 100%;
+	&_item {
+		position: relative;
+		margin-bottom: 15px;
+		&__is-valid:after {
+			content: "";
+			right: 23px;
+			top: 15px;
+			width: 20px;
+			height: 18px;
+			position: absolute;
+			background: url(../img/common/checked.svg) no-repeat center center;
+		}
+		&__has-error {
+			animation: swing 1s ease;
+			animation-iteration-count: 1;
+			.form_control__has-error {
+				color: $error;
+				&[type="password"]:focus {
+					color: $error;
+				}
+			}
+		}
+		&__has-error:after {
+			content: "";
+			right: 10px;
+			top: 8px;
+			width: 32px;
+			height: 32px;
+			position: absolute;
+			background: url(../img/common/exclamation.svg) no-repeat center center;
+		}
+	}
+	&_label {
+		opacity: 0;
+		height: 0px;
+		width: 0px;
+		position: absolute;
+	}
+	&_control {
+		font-size: 18px;
+		background: none;
+		height: 50px;
+		width: 100%;
+		padding: 5px 50px;
+		text-align: center;
+		border: 1px solid $light;
+		border-radius: 25px;
+		transition: border-radius .3s;
+		transition: background .3s;
+		color: #fff;
+		appearance: none;
+		&::placeholder {
+			color: $light;
+		}
+		&:focus {
+			background: #fff;
+			border: 1px solid #fff;
+			color: #000;
+		}
+		&[type="password"] {
+			font-family: 'Asterisks';
+			&::placeholder {
+				color: $light;
+				font-family: 'HelveticaNeue';
+				font-size: 18px;
+				letter-spacing: normal;
+			}
+			&:focus {
+				color: #000;
+			}
+		}
+		&:invalid {
+			box-shadow: none;
+		}
+	}
+	&_group {
+		padding: 3px 20px 8px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		@include breakpoint(xxs) {
+			padding: 3px 0px 8px;
+		}
+	}
+	&_forgot {
+		color: #fff;
+		text-decoration: none;
+		position: relative;
+		line-height: 19px;
+		border: 0;
+		&:after,
+		&:before {
+			content: "";
+			width: 100%;
+			position: absolute;
+			height: 1px;
+			background: rgba(255, 255, 255, 0.3);
+			left: 0;
+			bottom: 0;
+		}
+		&:after {
+			background: #fff;
+			transform: scaleX(0);
+			transform-origin: right;
+			transition: transform .3s;
+		}
+		&:hover:after {
+			transform: scaleX(1);
+			transform-origin: left;
+			transition: transform .3s;
+		}
+	}
+	&_submit {
+		background: none;
+		height: 50px;
+		padding: 5px 50px;
+		text-align: center;
+		border-radius: 25px;
+		text-transform: uppercase;
+		color: #fff;
+		border: 1px solid #fff;
+		transition: .3s;
+		font-family: "HelveticaNeue-Medium";
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 15px;
+		letter-spacing: 2.5px;
+		cursor: pointer;
+		&:disabled {
+			cursor: default;
+			color: rgba(255, 255, 255, 0.2);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+		}
+		&:focus {
+			background: #fff;
+			color: #000;
+		}
+	}
+}

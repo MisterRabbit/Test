@@ -1,0 +1,52 @@
+extends ../templates/main
+
+block variables
+	- var title = 'Test by Tikhon Umnov'
+
+block content
+	.overlay
+		noscript.noscript
+			p.noscript_disc Javascript отключен в вашем веб-браузере. Некоторые функции могут работать некорректно.
+		.popup
+			.popup_content
+				.popup_header
+					a(href="/").popup_back
+						+icon("arrow_left")
+						span вернуться
+				.popup_body
+					.popup_logo
+						picture
+							source(type="image/webp" srcset="/assets/img/content/logo.webp")
+							source(type="image/png" srcset="/assets/img/content/logo.png")
+							img(src="/assets/img/content/logo.png" alt="Пошлый зайчик")
+					form(name="login" action="/php/handler.php" method="POST").form#login_form
+						.form_item
+							label(for="login_phone").form_label Номер телефона
+							input.form_control.js__form_mask#login_phone(
+								type="tel"
+								name="phone"
+								placeholder="Номер телефона"
+								pattern="8\\s[(]\\s[0-9]{3}\\s[)]\\s\\d{3}[-]\\d{2}[-]\\d{2}"
+								title="Телефон должен соответствовать формату 8 ( XXX ) XXX-XX-XX"
+								autocomplete="on"
+								required
+							)
+						.form_item
+							label(for="login_password").form_label Номер телефона
+							input.form_control#login_password(
+								type="password"
+								name="password"
+								placeholder="Пароль"
+								pattern="^[\\S]{5,}$"
+								title="Пароль должен быть не менее 5 символов и не должен включать пробелы"
+								autocomplete="current-password"
+								required
+							)
+						.form_group
+							.form_item.checkbox
+								input.checkbox_input#login_memory(type="checkbox")
+								label(for="login_memory").checkbox_label #[span Запомнить]
+							.form_item
+								a(href="/").form_forgot Забыл пароль
+						.form_item
+							button(type="submit").btn.form_submit Войти

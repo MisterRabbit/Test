@@ -1,0 +1,40 @@
+.container {
+	margin: 0 auto;
+	max-width: $content-size;
+	padding: 0 15px;
+	width: 100%;
+	position: relative;
+	@include breakpoint(xs) {
+		padding: 0 10px;
+	}
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+	@include breakpoint(lg) {
+		margin-right: -10px;
+		margin-left: -10px;
+	}
+
+	&.nomargin {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.col {
+	position: relative;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 100%;
+	flex-basis: 0;
+	flex-grow: 1;
+	@include breakpoint(lg) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
