@@ -227,8 +227,6 @@ const handler = {
 				statusMessage.textContent = messages.success
 			} else if (xhr.status === 404) {
 				statusMessage.textContent = messages.notFound
-			} else {
-				statusMessage.textContent = messages.failure
 			}
 		}
 
