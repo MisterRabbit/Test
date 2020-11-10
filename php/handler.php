@@ -1,2 +1,2 @@
-$output ="Respond"
-echo $output;
+<?php
+var_dump($_POST);
